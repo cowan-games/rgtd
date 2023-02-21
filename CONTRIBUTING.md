@@ -10,6 +10,10 @@ Download and install Unity version `2022.2.6f1`.
 
 Follow GitHub's guide for [installing git](https://github.com/git-guides/install-git). While you're at it, you can read GitHub's guide to git [here](https://github.com/git-guides) and learn about the commands using the top navigation.
 
+### Git LFS
+
+Follow GitHub's guide for [installing git-lfs](https://docs.github.com/en/repositories/working-with-files/managing-large-files/installing-git-large-file-storage?platform=windows). This is an addon for `git` that handles storing changes made to large files.
+
 ### Code Editor
 
 You can use whatever you like. When installing Unity, you can opt to install Visual Studio and use that. Another popular option is Visual Studio Code.

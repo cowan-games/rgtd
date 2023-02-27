@@ -4,7 +4,7 @@
 
 ### Unity
 
-Download and install Unity version `2022.2.X`.
+Download and install Unity Hub.
 
 ### Git
 
@@ -20,7 +20,7 @@ You can use whatever you like. When installing Unity, you can opt to install Vis
 
 ## Cloning the Repository
 
-> Once the repository is cloned, you can open the repository using the Unity Hub.
+> Once the repository is cloned, you can open the repository using the Unity Hub. Unity Hub _should_ prompt you to install the correct Unity version (2022.2.6f1) when you identify the project.
 
 1. Using your terminal, navigate to a directory on your computer where you would like to store the repository
 2. Clone the repository by running `git clone https://github.com/cowan-games/rgtd.git`

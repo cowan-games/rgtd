@@ -4,7 +4,7 @@
 
 ### Unity
 
-Download and install Unity version `2022.2.6f1`.
+Download and install Unity version `2022.2.X`.
 
 ### Git
 

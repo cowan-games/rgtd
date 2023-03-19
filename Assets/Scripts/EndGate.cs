@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EndGate : MonoBehaviour
 {
-    private const string ENEMY_TAG = "Enemy";
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +18,7 @@ public class EndGate : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == ENEMY_TAG)
+        if (collision.gameObject.tag == Enemy.TagName)
         {
             Destroy(collision.gameObject);
         }

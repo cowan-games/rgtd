@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class Wave : MonoBehaviour
 {
-    public GameObject enemyPrefab;
-    public int amount;
+    public GameObject EnemyPrefab;
+    public int Amount;
 }

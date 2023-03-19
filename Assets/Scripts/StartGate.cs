@@ -4,44 +4,44 @@ using UnityEngine;
 
 public class StartGate : MonoBehaviour
 {
-    public float timeBetweenWavesSeconds = 5.0f;
-    public float timeBetweenSpawnsSeconds = 0.1f;
-    public Waypoint firstWaypoint;
-    public Wave[] waves;
-    private int currentWaveIndex = 0;
-    private int currentSpawnCount = 0;
+    public float TimeBetweenWavesSeconds = 5.0f;
+    public float TimeBetweenSpawnsSeconds = 1f;
+    public Waypoint FirstWaypoint;
+    public Wave[] Waves;
+    private int _currentWaveIndex = 0;
+    private int _currentSpawnCount = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (firstWaypoint == null || waves == null) return;
+        if (FirstWaypoint == null || Waves == null) return;
 
-        InvokeRepeating("SpawnCurrentWaveEnemy", timeBetweenWavesSeconds, timeBetweenSpawnsSeconds);
+        InvokeRepeating("SpawnCurrentWaveEnemy", 5, TimeBetweenSpawnsSeconds);
     }
 
     void SpawnCurrentWaveEnemy()
     {
-        GameObject instantiated = Instantiate(waves[currentWaveIndex].enemyPrefab, transform.position, Quaternion.identity);
+        GameObject instantiated = Instantiate(Waves[_currentWaveIndex].EnemyPrefab, transform.position, Quaternion.identity);
         Enemy enemy = instantiated.GetComponent<Enemy>();
-        enemy.targetObject = firstWaypoint.gameObject;
-        currentSpawnCount += 1;
+        enemy.TargetObject = FirstWaypoint.gameObject;
+        _currentSpawnCount += 1;
 
-        if (currentSpawnCount != waves[currentWaveIndex].amount) return;
+        if (_currentSpawnCount != Waves[_currentWaveIndex].Amount) return;
 
-        currentWaveIndex += 1;
-        currentSpawnCount = 0;
+        _currentWaveIndex += 1;
+        _currentSpawnCount = 0;
         CancelInvoke();
 
-        if (currentWaveIndex < waves.Length)
+        if (_currentWaveIndex < Waves.Length)
         {
-            InvokeRepeating("SpawnCurrentWaveEnemy", timeBetweenWavesSeconds, timeBetweenSpawnsSeconds);
+            InvokeRepeating("SpawnCurrentWaveEnemy", TimeBetweenWavesSeconds, TimeBetweenSpawnsSeconds);
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (firstWaypoint == null) return;
+        if (FirstWaypoint == null) return;
 
     }
 }
